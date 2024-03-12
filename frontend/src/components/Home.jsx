@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import JobDescription from './JobDesc.jsx';
 import Footer from './Footer.jsx';
 
@@ -24,8 +25,8 @@ const Home = () => {
         <div className="navbar">
           <h1>Job Portal</h1>
           <div className="buttons">
-            <button className="candidate-login">Candidate Login</button>
-            <button className="employer-login">Employer Login</button>
+            {/* Use Link instead of anchor tag */}
+            <Link to="/login" className="candidate-login">Login</Link>
           </div>
         </div>
       </nav>
