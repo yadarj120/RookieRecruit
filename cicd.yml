@@ -9,7 +9,7 @@ on:
       - main
 
   jobs:
-    backend-build-and-deploy:
+    back-build-and-deploy:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -32,7 +32,7 @@ on:
         # Add your deployment commands here
 
 
-    frontend-build-and-deploy:
+    front-build-and-deploy:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
