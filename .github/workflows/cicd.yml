@@ -12,7 +12,6 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    # Backend
     - name: Checkout
       uses: actions/checkout@v2
       with:
@@ -31,9 +30,7 @@ jobs:
 
     - name: Deploy
       # Add your deployment commands here
-
-
-    # Frontend
+      
     - name: Checkout
       uses: actions/checkout@v2
       with:
