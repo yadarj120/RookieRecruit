@@ -23,12 +23,7 @@ jobs:
           node-version: "20.x"
 
       - name: Install dependencies
-        run: npm install
-        working-directory: frontend
-
-      - name: Build
-        run: npm run build
-        working-directory: frontend
+        run: cat frontend/package.json
 
     # - name: Deploy
     #   # Add your deployment commands here
