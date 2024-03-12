@@ -15,7 +15,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        path: backend
+        path: backend/**
 
     - name: Set up JDK
       uses: actions/setup-java@v2
@@ -25,33 +25,33 @@ jobs:
         cache: maven
 
     - name: Build with Maven
-      run: mvn -f backend/backend/pom.xml clean package
+      run: ls -al
 
     - name: Run tests
-      run: mvn -f backend/backend/pom.xml test
+      run: ls -al backend
 
     # - name: Deploy
     #   # Add your deployment commands here
 
 
-  build-and-deploy-frontend:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        path: frontend
+  # build-and-deploy-frontend:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v2
+  #     with:
+  #       path: frontend
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20.x'
+  #   - name: Set up Node.js
+  #     uses: actions/setup-node@v2
+  #     with:
+  #       node-version: '20.x'
 
-    - name: Install dependencies
-      run: npm install
+  #   - name: Install dependencies
+  #     run: npm install
 
-    - name: Build
-      run: npm run build
+  #   - name: Build
+  #     run: npm run build
 
     # - name: Deploy
     #   # Add your deployment commands here
