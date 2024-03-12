@@ -28,9 +28,9 @@ jobs:
     - name: Run tests
       run: mvn -f backend/pom.xml test
 
-    - name: Deploy
-      # Add your deployment commands here
-      
+    # - name: Deploy
+    #   # Add your deployment commands here
+
     - name: Checkout
       uses: actions/checkout@v2
       with:
@@ -47,5 +47,5 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Deploy
-      # Add your deployment commands here
+    # - name: Deploy
+    #   # Add your deployment commands here
