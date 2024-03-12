@@ -28,8 +28,8 @@ jobs:
     - name: Run tests
       run: mvn -f backend/backend/pom.xml test
 
-    - name: Deploy
-      # Add your deployment commands here
+    # - name: Deploy
+    #   # Add your deployment commands here
 
 
   build-and-deploy-frontend:
@@ -51,5 +51,5 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Deploy
-      # Add your deployment commands here
+    # - name: Deploy
+    #   # Add your deployment commands here
