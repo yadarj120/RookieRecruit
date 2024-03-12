@@ -9,20 +9,47 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build-and-deploy-backend:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          path: frontend
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        path: backend
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "20.x"
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '21'
 
-      - name: Install dependencies
-        run: ls frontend/frontend
-    # - name: Deploy
-    #   # Add your deployment commands here
+    - name: Build with Maven
+      run: mvn -f backend/backend/pom.xml clean package
+
+    - name: Run tests
+      run: mvn -f backend/backend/pom.xml test
+
+    - name: Deploy
+      # Add your deployment commands here
+
+
+  build-and-deploy-frontend:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        path: frontend
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20.x'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    - name: Deploy
+      # Add your deployment commands here
