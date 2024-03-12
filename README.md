@@ -1,4 +1,4 @@
-Model:
+iModel:
 (i) Candidates: 
     Id, Name, Password, Jobs applied, 
 (ii) Jobs:
