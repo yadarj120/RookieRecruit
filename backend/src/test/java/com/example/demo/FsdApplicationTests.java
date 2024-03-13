@@ -1,10 +1,10 @@
-package com.blueyonder.backend;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackendApplicationTests {
+class FsdApplicationTests {
 
 	@Test
 	void contextLoads() {
