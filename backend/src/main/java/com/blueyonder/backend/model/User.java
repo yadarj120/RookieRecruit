@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.blueyonder.backend.model;
 
 import javax.persistence.Id;
 

@@ -1,12 +1,11 @@
-package com.example.demo.controller;
+package com.blueyonder.backend.controller;
 
 import java.util.List;
 
+import com.blueyonder.backend.model.User;
+import com.blueyonder.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import com.example.demo.model.User;
-import com.example.demo.services.UserService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")

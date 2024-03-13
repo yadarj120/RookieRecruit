@@ -1,33 +1,33 @@
-package com.example.demo.services;
+package com.blueyonder.backend.services;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.blueyonder.backend.model.Job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.User;
-import com.example.demo.repo.UserRepo;
+import com.blueyonder.backend.repo.JobRepo;
 
 @Service
-public class UserService {
+public class JobService {
     
     @Autowired
-    private UserRepo repo;
+    private JobRepo repo;
 
-    public List<User> fetchUserList() {
+    public List<Job> fetchJobList() {
         return repo.findAll();
     }
 
-    public Optional<User> fetchUserById(int id) {
+    public Optional<Job> fetchJobById(int id) {
         return repo.findById(id);
     }
 
-    public User saveUser(User user) {
-        return repo.save(user);
+    public Job saveJob(Job job) {
+        return repo.save(job);
     }
 
-    public String deleteUserById(int id) {
+    public String deleteJobById(int id) {
         String result;
         try {
             repo.deleteById(id);
