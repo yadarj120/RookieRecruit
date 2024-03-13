@@ -17,12 +17,32 @@ const Register = () => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Here you can perform registration functionality
-    console.log('User Type:', userType);
-    console.log('Username:', username);
-    console.log('Password:', password);
+    
+    const user = {
+      id:userType,
+      username: username,
+      password: password
+    };
+
+    try {
+      const response = await fetch('http://localhost:9898/addUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to register user');
+      }
+
+      console.log('User registered successfully');
+    } catch (error) {
+      console.error('Error registering user:', error.message);
+    }
   };
 
   return (
@@ -70,3 +90,4 @@ const Register = () => {
 };
 
 export default Register;
+
