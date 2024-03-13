@@ -1,6 +1,6 @@
 body {
   /* Specify the background image URL */
-  background-image: url('C:\Users\1037725\Downloads\job_portal-unsplash.jpg');
+  background-image: url('../public/job_portal-unsplash.jpg');
   /* Set background image size and position */
   background-size: cover;
   background-position: center;
