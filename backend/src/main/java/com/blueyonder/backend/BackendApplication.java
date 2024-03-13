@@ -6,10 +6,10 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @EnableMongoRepositories
-public class FsdApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FsdApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 		System.out.println("Welcome to CRUD APP");
 	}
 

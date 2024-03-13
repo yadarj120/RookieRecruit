@@ -1,6 +1,8 @@
 package com.blueyonder.backend.controller;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.blueyonder.backend.model.Job;
 import com.blueyonder.backend.services.JobService;
@@ -33,4 +35,18 @@ public class JobController {
     public String deleteJobById(@PathVariable int id) {
         return service.deleteJobById(id);
     }
+    
+    @GetMapping("/jobs/search")
+    public List<Job> searchJobs(@RequestParam String keyword) {
+        // Fetch the list of jobs from the service
+        Collection<Job> jobList = service.fetchJobList();
+        
+        // Filter jobs based on the keyword
+        return jobList.stream()
+                .filter(job -> job.getName().toLowerCase().contains(keyword.toLowerCase()) ||
+                        job.getDesc().toLowerCase().contains(keyword.toLowerCase()) ||
+                        job.getlocation().toLowerCase().contains(keyword.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
 }

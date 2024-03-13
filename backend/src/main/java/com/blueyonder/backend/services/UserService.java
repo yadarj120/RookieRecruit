@@ -21,7 +21,7 @@ public class UserService {
     public Optional<User> fetchUserById(int id) {
         return repo.findById(id);
     }
-
+    
     public User saveUser(User user) {
         return repo.save(user);
     }
