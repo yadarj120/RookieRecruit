@@ -1,4 +1,4 @@
-Model:
+iModel:
 (i) Candidates: 
     Id, Name, Password, Jobs applied, 
 (ii) Jobs:
@@ -24,7 +24,7 @@ Optional -> write tests for the functionalities
 
 API's:
 
-Endpoint: /jobs/search (would make it post as the payload could be large)
+Endpoint: /jobs/search
 Functionality: Allows users to search for jobs based on various criteria such as keywords, location, job type, industry, salary range, etc.
 Parameters:
 keywords: Keywords to search for in job titles or descriptions.
