@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import JobDescription from './JobDesc.jsx';
 import Footer from './Footer.jsx';
 
 const Home = () => {
