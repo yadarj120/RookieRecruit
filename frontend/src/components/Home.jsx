@@ -36,7 +36,7 @@ const Home = () => {
     <h1 className="large-text">Jobs at your fingertips</h1>
     <div className="search-bar">
       <input type="text" className="form-control search-input" placeholder="Job Title or keyword" />
-      <input type="text" className="form-control search-input" placeholder="Location" />
+      <input type="text" className="form-control search-input" placeholder="Location"/>
       <button className="btn btn-primary search-btn">Search Jobs</button>
     </div>
   </div>
