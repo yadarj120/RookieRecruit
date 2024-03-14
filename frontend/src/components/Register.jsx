@@ -21,7 +21,7 @@ const Register = () => {
     event.preventDefault();
     
     const user = {
-      id:userType,
+      id:userType+username+password,
       username: username,
       password: password
     };
