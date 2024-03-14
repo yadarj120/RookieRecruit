@@ -1,6 +1,5 @@
 package com.blueyonder.backend.model;
 
-import javax.persistence.Id;
 
 
 import org.springframework.data.mongodb.core.mapping.Document;
