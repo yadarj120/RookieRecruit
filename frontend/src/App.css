@@ -1,3 +1,12 @@
+body {
+  /* Specify the background image URL */
+  background-image: url('../public/job_portal-unsplash.jpg');
+  /* Set background image size and position */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Add other styles as needed */
+}
 .App {
   text-align: center;
 }
@@ -44,48 +53,101 @@ body {
   padding: 0;
 }
 
-.navbar {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Custom CSS for Navbar */
+.custom-navbar {
+  background-color: #E0CCBE;
 }
+
+.navbar-brand {
+  font-weight: bold;
+  color: #747264;
+}
+
+.nav-link {
+  color: #747264 !important; /* Text color for links */
+  margin-right: 15px; /* Add some space between the links */
+}
+
+/* Button styling */
+.btn-outline-light {
+  color: #747264;
+  border-color: #747264;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.link-gap {
+  margin-right: 20px; /* Adjust the spacing as needed */
+}
+
 
 .buttons button {
   margin-left: 10px;
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: #d9edf1;
   color: #fff;
   cursor: pointer;
 }
 
 .buttons button:hover {
-  background-color: #0056b3;
+  background-color: #a7c3e0;
 }
 
-.job-tile {
+/* .job-tile {
   background-color: #e0e8df;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
   margin: 10px;
   width: calc(25% - 20px); /* Adjust width to fit four tiles in one row */
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   display: inline-block;
-  vertical-align: top;
-}
+  vertical-align: top; 
+} 
+*/
 
-.job-tile h2 {
+/* .job-tile h2 {
   margin-top: 0;
+} */
+
+/* .job-tile p {
+  margin: 10px 0;
+} */
+
+.body-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh; /* Adjust height as needed */
 }
 
-.job-tile p {
-  margin: 10px 0;
+.body-content {
+  width: 70%; /* Adjust width as needed */
 }
+
+.large-text {
+  font-size: 7rem; /* Adjust font size as needed */
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+.search-btn {
+  width: 150px; /* Adjust button width as needed */
+}
+
 
 .footer {
   background-color: #333;
@@ -114,14 +176,20 @@ body {
   margin-top: 20px;
 }
 
+.link-gap {
+  margin-right: 20px; /* Adjust the spacing as needed */
+}
+
 .login-container {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 60px 20px 20px 100px; /* Add margin to the top, right, bottom, and left */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
+  float: left; /* Align to the left */
 }
+
 
 .login-form .form-group {
   margin-bottom: 20px;
@@ -130,13 +198,15 @@ body {
 .login-form label {
   display: block;
   margin-bottom: 5px;
+  color: #333; /* Adjust label color */
 }
 
 .login-form .form-control {
-  width: 100%;
+  width: calc(100% - 22px); /* Adjust width to account for padding and border */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  outline: none; /* Remove outline on focus */
 }
 
 .login-btn {
@@ -146,6 +216,7 @@ body {
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
 .login-btn:hover {
