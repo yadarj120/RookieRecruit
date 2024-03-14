@@ -1,5 +1,6 @@
 package com.blueyonder.backend.model;
 
+import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 //@Getter
 @Document("Job")
 public class Job {
-
+	@Id
 	private int id;
 	private String name;
 	private String desc;
