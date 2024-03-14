@@ -2,13 +2,11 @@ package com.blueyonder.backend.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.json.JSONObject;
 
 
 import com.blueyonder.backend.model.User;
 import com.blueyonder.backend.services.UserService;
 
-import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

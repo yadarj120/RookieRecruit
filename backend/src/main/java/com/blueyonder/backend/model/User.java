@@ -2,7 +2,7 @@ package com.blueyonder.backend.model;
 
 import java.util.List;
 
-import javax.persistence.Id;
+
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
