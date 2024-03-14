@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-  const [userType, setUserType] = useState('user');
+  const [userType, setUserType] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -18,12 +18,49 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Here you can perform login functionality
-    console.log('User Type:', userType);
-    console.log('Username:', username);
-    console.log('Password:', password);
+
+    try {
+      const response = await fetch('http://localhost:9898/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id: userType,
+          username: username,
+          password: password
+        })
+      });
+
+      console.log(response);
+
+      if (response.ok) {
+        const result = await response.json(); 
+            if (result === true) {
+                if (userType === 'admin') {
+                  sessionStorage.setItem('username', username);
+                  sessionStorage.setItem('password', password);
+                    window.location.href = '/admin_dashboard';
+                } else if (userType === 'user') {
+                  sessionStorage.setItem('username', username);
+                  sessionStorage.setItem('password', password);
+                    window.location.href = '/user_dashboard';
+                }
+            } else {
+                alert('Incorrect credentials. Please try again.');
+                setUsername('');
+                setPassword('');
+            }
+      } else {
+        alert('Authentication failed. Please try again.');
+        setUsername('');
+        setPassword('');
+      }
+    } catch (error) {
+      console.error('Error logging in:', error.message);
+    }
   };
 
   return (
@@ -38,8 +75,9 @@ const Login = () => {
             onChange={handleUserTypeChange}
             className="form-control"
           >
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
+            <option value="">Select User Type</option>
+            <option value="admin">admin</option>
+            <option value="user">user</option>
           </select>
         </div>
         <div className="form-group">
