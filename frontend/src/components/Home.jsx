@@ -27,7 +27,7 @@ const Home = () => {
     <span className="link-gap"></span>
     <Link to="/notifications" className="nav-link">Notifications</Link>
   </div>
-  <Link to="/logout" className="btn btn-outline-light">Logout</Link>
+  <Link to="/" className="btn btn-outline-light">Logout</Link>
 </nav>
 
 <div className="body-container">
