@@ -1,5 +1,8 @@
 package com.blueyonder.backend.model;
 
+import java.util.List;
+
+
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,11 +12,18 @@ public class User {
    private String id;
    private String username;
    private String password;
+   private List<String> jobIds;
 public String getId() {
 	return id;
 }
 public void setId(String id) {
 	this.id = id;
+}
+public List<String> getJobIds() {
+	return jobIds;
+}
+public void setJobIds(List<String> jobIds) {
+	this.jobIds = jobIds;
 }
 public String getUsername() {
 	return username;
@@ -27,6 +37,5 @@ public String getPassword() {
 public void setPassword(String password) {
 	this.password = password;
 }
-   
    
 }

@@ -1,13 +1,13 @@
 package com.blueyonder.backend.model;
 
 
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 //@Entity
 //@Getter
 @Document("Job")
 public class Job {
-
 	private int id;
 	private String name;
 	private String desc;
