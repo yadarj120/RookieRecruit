@@ -73,20 +73,24 @@ const User = () => {
     };
 
     return (
-        <div>
-            <h1>Welcome, {username}!</h1>
-            <div className="job-tile">
-                {jobs.map((job, index) => (
-                    <div key={index} className="job-description">
-                        <h2>{job.name}</h2>
-                        <p>Location: {job.location}</p>
-                        <p>Tech Stack: {job.techStack}</p>
-                        <button onClick={() => handleApply(job.id)}>Apply</button>
+        <div className="container-fluid">
+        <h1 className="welcome-heading">Welcome, {username}!</h1>
+        <div className="row job-container">
+            {jobs.map((job, index) => (
+                <div key={index} className="col-md-4">
+                    <div className="card job-card">
+                        <div className="card-body">
+                            <h5 className="card-title">{job.name}</h5>
+                            <p className="card-text">Location: {job.location}</p>
+                            <p className="card-text">Tech Stack: {job.techStack}</p>
+                            <button onClick={() => handleApply(job.id)} className="btn btn-primary">Apply</button>
+                        </div>
                     </div>
-                ))}
-            </div>
-            <button onClick={handleViewAppliedJobs}>View Applied Jobs</button>
+                </div>
+            ))}
         </div>
+        <button onClick={handleViewAppliedJobs} className="btn btn-primary view-jobs-btn">View Applied Jobs</button>
+    </div>
     );
 };
 

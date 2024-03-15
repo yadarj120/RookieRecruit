@@ -181,71 +181,30 @@ body {
 }
 
 .login-container {
-  max-width: 400px;
-  margin: 60px 20px 20px 100px; /* Add margin to the top, right, bottom, and left */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  float: left; /* Align to the left */
+  padding-top: 60px;
 }
 
-
-.login-form .form-group {
-  margin-bottom: 20px;
-}
-
-.login-form label {
-  display: block;
-  margin-bottom: 5px;
-  color: #333; /* Adjust label color */
-}
-
-.login-form .form-control {
-  width: calc(100% - 22px); /* Adjust width to account for padding and border */
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none; /* Remove outline on focus */
-}
-
-.login-btn {
-  background-color: #007bff;
-  color: #fff;
+.custom-card {
+  background-color: #E0CCBE;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
-.login-btn:hover {
-  background-color: #0056b3;
-}
-
-.register-btn {
-  background-color: #28a745;
-  color: #fff;
+.custom-btn {
+  background-color: #747264;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
 }
 
-.register-btn:hover {
-  background-color: #218838;
+.custom-btn:hover {
+  background-color: #3C3633;
 }
+
+
 
 .register-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  padding-top: 60px;
 }
 
-.register-form .form-group {
+/* .register-form .form-group {
   margin-bottom: 20px;
 }
 
@@ -272,4 +231,20 @@ body {
 
 .register-btn:hover {
   background-color: #0056b3;
+} */
+.welcome-heading {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.job-container {
+  margin-bottom: 30px;
+}
+
+.job-card {
+  margin-bottom: 20px;
+}
+
+.view-jobs-btn {
+  margin-top: 20px;
 }

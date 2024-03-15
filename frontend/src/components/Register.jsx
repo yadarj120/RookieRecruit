@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [userType, setUserType] = useState('user');
@@ -46,46 +47,57 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit} className="register-form">
-        <div className="form-group">
-          <label htmlFor="userType">User Type:</label>
-          <select
-            id="userType"
-            value={userType}
-            onChange={handleUserTypeChange}
-            className="form-control"
-          >
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-          </select>
+    <div className="container-fluid register-container">
+    <div className="row justify-content-start">
+      <div className="col-md-6 col-lg-4"> {/* Set width to 50% for medium and large screens */}
+        <div className="card mt-5 custom-card">
+          <div className="card-body">
+            <h2 className="text-center mb-4">Register</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="userType">User Type</label>
+                <select
+                  id="userType"
+                  value={userType}
+                  onChange={handleUserTypeChange}
+                  className="form-control"
+                >
+                  <option value="user">User</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="username">Username</label>
+                <input
+                  type="text"
+                  id="username"
+                  value={username}
+                  onChange={handleUsernameChange}
+                  className="form-control"
+                  placeholder="Enter your username"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={handlePasswordChange}
+                  className="form-control"
+                  placeholder="Enter your password"
+                />
+              </div>
+              <button type="submit" className="btn btn-primary btn-block custom-btn">Register</button>
+            </form>
+            <p className="text-center mt-3">
+              Already have an account? <Link to="/login">Login here</Link>
+            </p>
+          </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={handleUsernameChange}
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
-          <button type="submit" className="register-btn2">Register</button>
-        </div>
-      </form>
+      </div>
     </div>
+  </div>
   );
 };
 
